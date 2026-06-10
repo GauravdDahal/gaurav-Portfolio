@@ -114,7 +114,7 @@ function renderContact(c) {
 
 function renderFooter(meta) {
   document.getElementById('footer').innerHTML =
-    `Built with intent · <span>${meta.name}</span> · ${meta.location} · ${meta.footerYear}`;
+    ` Copyright by· <span>${meta.name}</span> · ${meta.location} · ${meta.footerYear}`;
 }
 
 /* ── Typewriter ── */
