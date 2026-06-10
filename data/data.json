@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "name": "Gaurav Dahal",
+    "title": "IT Consultant & Backend Developer",
+    "location": "Bhaktapur, Nepal",
+    "education": "BSc. CSIT · Tribhuvan University",
+    "tagline": "IT Consultant & Backend Developer bridging technical expertise with business strategy — from rural municipality infrastructure to full-stack web applications.",
+    "footerYear": "2025"
+  },
+  "contact": {
+    "email": "dahalgaurav6@gmail.com",
+    "phone": "+977 9745372433",
+    "github": "https://github.com/GauravdDahal",
+    "githubLabel": "github.com/GauravdDahal",
+    "linkedin": "https://www.linkedin.com/in/gaurav-dahal-b68a24296",
+    "linkedinLabel": "linkedin.com/in/gaurav-dahal",
+    "contactBlurb": "Whether you need a backend developer, an IT consultant for your organization's digital transformation, or a strategic technology advisor — I'm open to meaningful work.",
+    "contactBlurb2": "Based in <strong>Bhaktapur, Nepal</strong>. Available for freelance projects and full-time opportunities."
+  },
+  "about": {
+    "paragraphs": [
+      "I'm a <strong>results-driven IT Consultant and Software Developer</strong> with a BSc. in Computer Science & Information Technology from Tribhuvan University.",
+      "My work spans both ends of the spectrum — writing clean <strong>Laravel PHP backends</strong> and advising organizations on <strong>digital transformation and IT infrastructure</strong>. I've helped rural municipalities modernize their workflows and guided startups in building scalable systems.",
+      "I thrive at the intersection of <strong>technology and strategy</strong> — translating business requirements into sustainable technical solutions."
+    ],
+    "stats": [
+      { "num": "2+", "label": "Years of consulting & freelance experience" },
+      { "num": "5+", "label": "Projects delivered across web, mobile & ML" },
+      { "num": "3",  "label": "Organizations supported with IT strategy" }
+    ]
+  },
+  "skills": [
+    {
+      "group": "Languages",
+      "items": [
+        { "name": "PHP",        "highlight": true },
+        { "name": "Python",     "highlight": true },
+        { "name": "JavaScript", "highlight": false },
+        { "name": "C",          "highlight": false },
+        { "name": "C++",        "highlight": false }
+      ]
+    },
+    {
+      "group": "Frameworks & Libraries",
+      "items": [
+        { "name": "Laravel",   "highlight": true },
+        { "name": "React.js",  "highlight": false },
+        { "name": "Node.js",   "highlight": false },
+        { "name": "Flask",     "highlight": false },
+        { "name": "Bootstrap", "highlight": false }
+      ]
+    },
+    {
+      "group": "Databases",
+      "items": [
+        { "name": "MySQL",   "highlight": false },
+        { "name": "MongoDB", "highlight": false }
+      ]
+    },
+    {
+      "group": "Tools & Platforms",
+      "items": [
+        { "name": "Git / GitHub", "highlight": false },
+        { "name": "Postman",      "highlight": false },
+        { "name": "Jira",         "highlight": false },
+        { "name": "Trello",       "highlight": false },
+        { "name": "VS Code",      "highlight": false },
+        { "name": "SPSS",         "highlight": false },
+        { "name": "Excel",        "highlight": false }
+      ]
+    },
+    {
+      "group": "IT Consulting",
+      "items": [
+        { "name": "Infrastructure Planning",  "highlight": true },
+        { "name": "Digital Transformation",   "highlight": true },
+        { "name": "Systems Analysis",         "highlight": false },
+        { "name": "Technology Strategy",      "highlight": false },
+        { "name": "Project Leadership",       "highlight": false },
+        { "name": "Stakeholder Management",   "highlight": false }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Tech Lead & IT Consultant",
+      "period": "2025 – Present",
+      "company": "Dahal Niman Sewa · Part-Time / Freelance",
+      "bullets": [
+        "Lead technology planning and digital transformation initiatives",
+        "Design and recommend software and infrastructure solutions",
+        "Manage stakeholder communication and project documentation",
+        "Support system modernization and operational efficiency improvements"
+      ]
+    },
+    {
+      "role": "Lead IT Consultant",
+      "period": "2024 – Present",
+      "company": "Gaurab Consultancy Pvt. Ltd. · Freelance",
+      "bullets": [
+        "Led consulting projects for rural municipality IT infrastructure development",
+        "Designed recommendations for departmental IT setup and digital workflows",
+        "Developed implementation strategies for hardware, networking, and software systems",
+        "Aligned technology initiatives with organizational objectives via stakeholder collaboration"
+      ]
+    },
+    {
+      "role": "Backend Developer Intern (Laravel PHP)",
+      "period": "2025",
+      "company": "IIONS Technology Pvt. Ltd.",
+      "bullets": [
+        "Developed and maintained backend functionalities using Laravel PHP Framework",
+        "Designed and optimized database structures and queries",
+        "Built and integrated RESTful APIs for web applications",
+        "Improved application performance and code maintainability"
+      ]
+    },
+    {
+      "role": "Research Assistant – Data Analysis",
+      "period": "2023 – 2025",
+      "company": "Regent College & Auckland Institute of Studies · Freelance",
+      "bullets": [
+        "Assisted in quantitative data analysis for multiple Master's research projects",
+        "Conducted statistical analysis using Excel and SPSS",
+        "Supported visualization and interpretation of research findings"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "icon": "🏛️",
+      "name": "Rural Municipality IT Infrastructure",
+      "desc": "Led assessment and planning of municipal technology infrastructure. Designed scalable IT deployment and governance strategies with stakeholder coordination.",
+      "tags": ["IT Consulting", "Infrastructure", "Strategy"],
+      "link": ""
+    },
+    {
+      "icon": "🌾",
+      "name": "Crop Recommendation System",
+      "desc": "Machine learning solution for crop and fertilizer recommendations using climate and agricultural datasets for predictive analysis.",
+      "tags": ["Python", "Flask", "NumPy", "ML"],
+      "link": ""
+    },
+    {
+      "icon": "🛒",
+      "name": "E-Commerce Platform",
+      "desc": "Full e-commerce platform with shopping cart and payment functionalities. Led end-to-end development from architecture to deployment.",
+      "tags": ["PHP", "WordPress", "MySQL", "CSS"],
+      "link": ""
+    }
+  ],
+  "certifications": [
+    { "icon": "🎨", "name": "Frontend Development (HTML, CSS, JavaScript, React)" },
+    { "icon": "⚙️", "name": "Backend Development with Node.js and REST APIs" },
+    { "icon": "📊", "name": "Data Science with Python" },
+    { "icon": "🤖", "name": "Artificial Intelligence & Machine Learning Fundamentals" },
+    { "icon": "🔄", "name": "Agile Project Management and Collaboration Tools" }
+  ],
+  "typewriterPhrases": [
+    "laravel artisan serve",
+    "consulting --scope=digital-transformation",
+    "python manage.py runserver",
+    "git commit -m \"deliver value\""
+  ]
+}

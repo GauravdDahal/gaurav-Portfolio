@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin – Gaurav Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen">
+    <div class="login-box">
+      <div class="login-logo">GD. Admin</div>
+      <p class="login-sub">Enter your admin token to continue</p>
+      <input type="password" id="token-input" placeholder="Admin token" autocomplete="current-password" />
+      <button id="login-btn">Login →</button>
+      <div id="login-error" class="error-msg"></div>
+    </div>
+  </div>
+
+  <!-- ADMIN DASHBOARD (hidden until logged in) -->
+  <div id="dashboard" class="hidden">
+    <nav class="admin-nav">
+      <span class="admin-logo">GD. Admin</span>
+      <div class="admin-nav-right">
+        <a href="/" target="_blank" class="nav-link">View Site ↗</a>
+        <button id="logout-btn" class="btn-logout">Logout</button>
+      </div>
+    </nav>
+
+    <div class="admin-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-label">Sections</div>
+        <ul class="sidebar-nav">
+          <li><button class="tab-btn active" data-tab="meta">Meta / Hero</button></li>
+          <li><button class="tab-btn" data-tab="about">About</button></li>
+          <li><button class="tab-btn" data-tab="skills">Skills</button></li>
+          <li><button class="tab-btn" data-tab="experience">Experience</button></li>
+          <li><button class="tab-btn" data-tab="projects">Projects</button></li>
+          <li><button class="tab-btn" data-tab="certifications">Certifications</button></li>
+          <li><button class="tab-btn" data-tab="contact">Contact</button></li>
+        </ul>
+      </aside>
+
+      <!-- Editor -->
+      <main class="editor-area">
+        <div class="editor-header">
+          <span id="editor-title">Meta / Hero</span>
+          <button id="save-btn" class="btn-save">Save Changes</button>
+        </div>
+        <div id="save-status" class="save-status"></div>
+        <textarea id="json-editor" spellcheck="false"></textarea>
+      </main>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
