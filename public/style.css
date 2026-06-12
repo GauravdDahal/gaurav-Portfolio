@@ -226,6 +226,7 @@ h2 {
   color: var(--accent); white-space: nowrap; flex-shrink: 0;
   background: rgba(0,212,200,0.08); border: 1px solid rgba(0,212,200,0.2);
   border-radius: 4px; padding: 0.25rem 0.6rem;
+  transform: translate(-0.6rem, 0.4rem);
 }
 .tl-company { font-size: 0.85rem; color: var(--muted); margin: 0.2rem 0 0.8rem; }
 .tl-bullets { list-style: none; }
