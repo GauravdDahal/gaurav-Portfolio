@@ -109,8 +109,13 @@ app.put('/api/admin/data/:section', requireAuth, async (req, res) => {
     res.json({ ok: true });
   } catch (e) {
     console.error('save section failed:', e);
-    res.status(500).json({ error: 'Could not save section' });
+    res.status(500).json({ error: 'Could not save section', detail: String(e && e.message), blob: USE_BLOB });
   }
+});
+
+// Temporary debug: shows whether the Blob token is visible to the function
+app.get('/api/health', (req, res) => {
+  res.json({ blob: USE_BLOB, node: process.version });
 });
 
 // ── Start ───────────────────────────────────────────────
