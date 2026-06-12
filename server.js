@@ -1,17 +1,20 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const { put, list } = require('@vercel/blob');
+const { put, get } = require('@vercel/blob');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const DATA_FILE = path.join(__dirname, 'data', 'data.json');
 
 // On Vercel the filesystem is read-only, so data lives in Vercel Blob.
-// Locally (no BLOB_READ_WRITE_TOKEN) we keep using data/data.json.
-const USE_BLOB = !!process.env.BLOB_READ_WRITE_TOKEN;
+// Locally (no blob token) we keep using data/data.json.
+// The env var is BLOB_READ_WRITE_TOKEN by default, but Vercel prefixes it
+// with the store name if one was set — accept any *_READ_WRITE_TOKEN.
+const BLOB_TOKEN = process.env.BLOB_READ_WRITE_TOKEN ||
+  (Object.entries(process.env).find(([k]) => k.endsWith('_READ_WRITE_TOKEN')) || [])[1];
+const USE_BLOB = !!BLOB_TOKEN;
 const BLOB_KEY = 'portfolio-data.json';
-let blobUrl = null;
 
 // ── Middleware ──────────────────────────────────────────
 app.use(express.json());
@@ -27,20 +30,14 @@ async function readData() {
   if (!USE_BLOB) {
     return JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
   }
-  if (!blobUrl) {
-    const { blobs } = await list({ prefix: BLOB_KEY, limit: 1 });
-    if (blobs.length === 0) {
-      // First run: seed the blob from the bundled data file
-      const seed = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-      await writeData(seed);
-      return seed;
-    }
-    blobUrl = blobs[0].url;
+  const result = await get(BLOB_KEY, { access: 'private', useCache: false, token: BLOB_TOKEN });
+  if (!result) {
+    // First run: seed the blob from the bundled data file
+    const seed = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+    await writeData(seed);
+    return seed;
   }
-  // Unique query param bypasses the CDN cache so we always read the latest save
-  const res = await fetch(`${blobUrl}?v=${Date.now()}`, { cache: 'no-store' });
-  if (!res.ok) throw new Error(`Blob fetch failed: ${res.status}`);
-  return res.json();
+  return new Response(result.stream).json();
 }
 
 async function writeData(data) {
@@ -48,14 +45,13 @@ async function writeData(data) {
     fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf8');
     return;
   }
-  const blob = await put(BLOB_KEY, JSON.stringify(data, null, 2), {
-    access: 'public',
+  await put(BLOB_KEY, JSON.stringify(data, null, 2), {
+    access: 'private',
     addRandomSuffix: false,
     allowOverwrite: true,
     contentType: 'application/json',
-    cacheControlMaxAge: 60,
+    token: BLOB_TOKEN,
   });
-  blobUrl = blob.url;
 }
 
 // ── Public API ──────────────────────────────────────────
